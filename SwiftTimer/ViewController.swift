@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTimer = Timer(timer_handler)
+        myTimer = Timer(handler: timer_handler)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -92,7 +92,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView?.dequeueReusableCellWithIdentifier("ResultCell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView?.dequeueReusableCellWithIdentifier("ResultCell") as! UITableViewCell
         //cell.textLabel.text = myResults.getResult(indexPath.row)
         return cell
     }

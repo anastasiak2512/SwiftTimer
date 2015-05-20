@@ -40,29 +40,29 @@ class SwiftTimerTests: XCTestCase {
     }
     
     func testStartTimer() {
-        let swTimer = Timer(timer_handler_start)
+        let swTimer = Timer(handler: timer_handler_start)
         swTimer.start()
     }
     
     func testTickTimer() {
         let timer = NSTimer()
-        let swTimer = Timer(timer_handler_tick)
+        let swTimer = Timer(handler: timer_handler_tick)
         swTimer.tick(timer)
     }
     
     func testSeveralTimerTicks() {
         let timer = NSTimer()
-        let swTimer = Timer(timer_handler_tick)
+        let swTimer = Timer(handler: timer_handler_tick)
         swTimer.tick(timer)
-        swTimer.setHandler(timer_handler_tick_two)
+        swTimer.setTimerHandler(timer_handler_tick_two)
         swTimer.tick(timer)
     }
     
     func testWrongTimerTick() {
         let timer = NSTimer()
-        let swTimer = Timer(timer_handler_tick)
+        let swTimer = Timer(handler: timer_handler_tick)
         swTimer.tick(timer)
-        swTimer.setHandler(timer_handler_tick_false)
+        swTimer.setTimerHandler(timer_handler_tick_false)
         swTimer.tick(timer)
 
     }

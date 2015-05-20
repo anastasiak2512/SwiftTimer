@@ -29,7 +29,7 @@ class Timer {
         timer.invalidate()
     }
     
-    func setHandler(handler: (String) -> ()) {
+    func setTimerHandler(handler: (String) -> ()) {
         self.handler = handler
     }
     
@@ -55,10 +55,10 @@ class Timer {
             myDay++
         }
         let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", myDay, myHour, myMinute, mySecond)
-        self.handler(timeStr)
+        self.handler(timeStr as String)
     }
     
-    func getLastTime() -> timeTuple! {
+    func getLastTime() -> timeData! {
         return (mySecond, myMinute, myHour, myDay)
     }
 }

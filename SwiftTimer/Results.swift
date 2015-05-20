@@ -7,50 +7,53 @@
 //
 
 import Foundation
+//
+//import class Foundation
+//import var Darwin.errno
 
-//enum WeekDays {
-//    case Monday
-//    case Tuesday
-//    case Wednesday
-//    case Thursday
-//    case Friday
-//    case Saturday
-//    case Sunday
-//}
+enum WeekDays {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
+    case Sunday
+}
 
-typealias timeTuple = (sec:Int, min:Int,
+typealias timeData = (sec:Int, min:Int,
                        hour:Int, day:Int)
 
 class Results {
-//    class ChildResults {
-//
-//    }
 
-    var resultSet: [timeTuple] = []
+    var resultedSet: [timeData] = []
     
-    func addResult(res:timeTuple) {
-        resultSet.append(res)
+    func addResult(res: timeData) {
+        resultedSet.append(res)
     }
     
     func size() -> Int {
-        return resultSet.count
+        return resultedSet.count
     }
 
     func getResult(index:Int) -> String? {
-        if resultSet.count > index {
-            let timeVal = resultSet[index]
+        if resultedSet.count > index {
+            let timeVal = resultedSet[index]
             let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", timeVal.day, timeVal.hour, timeVal.min, timeVal.sec)
-            return timeStr
+            return timeStr as String
         } else {
             return nil
         }
     }
-    
+
+    //TODO: finish function
     func minMax(array: [Int]) -> (min: Int, max: Int)? {
-        if array.isEmpty { return nil }
+        if array.isEmpty {
+            return nil
+        }
         var currentMin = array[0]
         var currentMax = array[0]
-        for value in array[1..<array.count] {
+        for value in array[1 ..< array.count] {
             if value < currentMin {
                 currentMin = value
             } else if value > currentMax {
@@ -59,14 +62,34 @@ class Results {
         }
         return (currentMin, currentMax)
     }
-    
-//    func noahArk() {
-//        let 🌍 = "🐶🐺🐱🐭🐹🐰🐸🐯🐨🐻🐷🐽🐮🐗🐵🐒🐴🐑🐘🐼🐧🐦🐤🐥🐣🐔🐍🐢🐛🐝🐜🐞🐌🐙🐚🐠🐟🐬🐳🐋🐄🐏🐀🐃🐅🐇🐉🐎🐐🐓🐕🐖🐁🐂🐲🐡🐊🐫🐪🐆🐈🐩"
-//        var 🚢: [String] = []
-//        for 💕 in 🌍 {
-//            🚢.append(💕 + 💕)
-//        }
-//
-//    }
+
+
+    func handle(val: Int) {
+        //...
+//        minMax(resultedSet)
+    }
+
+    func foo() {
+        let numInt = 7
+        let numStr = "7"
+
+        handle(numInt)
+
+        var length = 7
+        var width = 3
+
+        println("The rectangle has a length of \(length) and a width of \(width), " +
+                "giving it an area of \(length * width).")
+
+    }
 }
+
+class TimerResults : Results {
+
+}
+
+class History : Results {
+
+}
+
 
