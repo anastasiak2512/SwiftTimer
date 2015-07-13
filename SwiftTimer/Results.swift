@@ -11,6 +11,8 @@ import Foundation
 //import class Foundation
 //import var Darwin.errno
 
+import UIKit
+
 enum WeekDays {
     case Monday
     case Tuesday
@@ -27,7 +29,7 @@ typealias timeData = (sec:Int, min:Int,
 class Results {
 
     var resultedSet: [timeData] = []
-    
+
     func addResult(res: timeData) {
         resultedSet.append(res)
     }
@@ -69,7 +71,7 @@ class Results {
 //        minMax(resultedSet)
     }
 
-    func foo() {
+    func getLen() {
         let numInt = 7
         let numStr = "7"
 
@@ -84,7 +86,20 @@ class Results {
     }
 }
 
-class TimerResults : Results {
+protocol Time {
+    func convertTime(sec: Int, min: Int, hour: Int, day: Int) -> Int
+    func parse(dateStr:String, format:String="yyyy-MM-dd") -> NSDate
+    func from(#year:Int, month:Int, day:Int) -> NSDate
+}
+
+protocol Alarm {
+    func tick(timer:NSTimer!) -> Int
+    func start()
+    func stop()
+    func reset()
+}
+
+class TimeResults: Time, Alarm, Results {
 
 }
 
