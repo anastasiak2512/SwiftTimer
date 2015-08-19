@@ -1,5 +1,5 @@
 //
-//  CallObjCClass.h
+//  ObjCCallClass.h
 //  SwiftTimer
 //
 //  Created by AK on 12/05/15.
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, WeekDays) {
     Sunday
 };
 
-@interface CallObjCClass : NSObject
+@interface ObjCCallClass : NSObject
 
 @property (strong, nonatomic) NSString *property;
 @property (nonatomic) WeekDays *dayProperty;

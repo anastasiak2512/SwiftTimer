@@ -67,8 +67,10 @@ class Results {
 
 
     func handle(val: Int) {
-        //...
-//        minMax(resultedSet)
+
+        let initialCards = ["Jack" : 11]
+
+        var myCards = initialCards
     }
 
     func getLen() {
@@ -80,31 +82,35 @@ class Results {
         var length = 7
         var width = 3
 
+        let square = length * width;
+
         println("The rectangle has a length of \(length) and a width of \(width), " +
-                "giving it an area of \(length * width).")
+                "giving it an area of \(square).")
 
     }
 }
 
-protocol Time {
-    func convertTime(sec: Int, min: Int, hour: Int, day: Int) -> Int
-    func parse(dateStr:String, format:String="yyyy-MM-dd") -> NSDate
-    func from(#year:Int, month:Int, day:Int) -> NSDate
-}
-
-protocol Alarm {
-    func tick(timer:NSTimer!) -> Int
-    func start()
-    func stop()
-    func reset()
-}
-
-class TimeResults: Time, Alarm, Results {
-
-}
-
-class History : Results {
-
-}
+//// Time protocol to handle **date** and **time** in various formats
+//protocol Time {
+//    func convertTime(sec: Int, min: Int, hour: Int, day: Int) -> Int
+//    func parse(dateStr:String, format:String="yyyy-MM-dd") -> NSDate
+//    func from(#year:Int, month:Int, day:Int) -> NSDate
+//}
+//
+//// Alarm protocol to handle timer ticks
+//protocol Alarm {
+//    func tick(timer:NSTimer!) -> Int
+//    func start()
+//    func stop()
+//    func reset()
+//}
+//
+//class TimeResults: Time, Alarm, Results {
+//
+//}
+//
+//class History : Results {
+//
+//}
 
 

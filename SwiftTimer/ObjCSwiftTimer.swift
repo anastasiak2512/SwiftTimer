@@ -16,7 +16,7 @@ import Foundation
     }
     
     func method() {
-        var myObjClass: CallObjCClass = CallObjCClass()
+        var myObjClass: ObjCCallClass = ObjCCallClass()
         myObjClass.property = "Calling ObjC code!"
         myObjClass.method()
     }

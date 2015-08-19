@@ -1,14 +1,14 @@
 //
-//  CallObjCClass.m
+//  ObjCCallClass.m
 //  SwiftTimer
 //
 //  Created by AK on 12/05/15.
 //  Copyright (c) 2015 JetBrains. All rights reserved.
 //
 
-#import "CallObjCClass.h"
+#import "ObjCCallClass.h"
 
-@implementation CallObjCClass
+@implementation ObjCCallClass
 
 - (void) method {
     NSLog(@"Hello Swift-Timer!");
