@@ -40,7 +40,7 @@ class Timer {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "tick:", userInfo: nil, repeats: true)
     }
 
-    @objc func tick(timer:NSTimer!) {
+@objc func tick(timer:NSTimer!) {
         mySecond++
         if mySecond >= 60 {
             mySecond = 0
@@ -50,15 +50,22 @@ class Timer {
             myMinute = 0
             myHour++
         }
-        if myHour >= 24 {
-            myHour = 0
-            myDay++
-        }
-        let curTime = getLastTime()
 
-        let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", curTime.day, curTime.hour, curTime.min, curTime.sec)
-        self.handler(timeStr as String)
+    if myHour >= 24 {
+        myHour = 0
+        myDay++
     }
+
+    let curTime = getLastTime()
+    let curSec = curTime.sec
+
+    let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", curTime.day, curTime.hour, curTime.min, curTime.sec)
+    self.handler(timeStr as String)
+
+
+
+
+}
     
     func getLastTime() -> timeData! {
         return (mySecond, myMinute, myHour, myDay)
