@@ -66,7 +66,7 @@ class Results {
     }
 
 
-    func handle(val: Int) {
+    func handle(val: Int, num: Int) {
 
         let initialCards = ["Jack" : 11]
 
@@ -74,27 +74,27 @@ class Results {
     }
 
     func getLen() {
+        handle(17, num:5)
+
         let numInt = 7
         let numStr = "7"
-
-        handle(numInt)
 
         var length = 7
         var width = 3
 
         let square = length * width;
 
-        println("The rectangle has a length of \(length) and a width of \(width), " +
+        print("The rectangle has a length of \(length) and a width of \(width), " +
                 "giving it an area of \(square).")
 
     }
 }
 
-//// Time protocol to handle **date** and **time** in various formats
+// Time protocol to handle **date** and **time** in various formats
 //protocol Time {
 //    func convertTime(sec: Int, min: Int, hour: Int, day: Int) -> Int
 //    func parse(dateStr:String, format:String="yyyy-MM-dd") -> NSDate
-//    func from(#year:Int, month:Int, day:Int) -> NSDate
+////    func from(#year:Int, month:Int, day:Int) -> NSDate
 //}
 //
 //// Alarm protocol to handle timer ticks

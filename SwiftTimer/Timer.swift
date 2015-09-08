@@ -40,7 +40,20 @@ class Timer {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "tick:", userInfo: nil, repeats: true)
     }
 
-@objc func tick(timer:NSTimer!) {
+
+//    func getSq(ln:Int, _ wd:Int) {
+//        let sq = ln * wd;
+//        let pr = (ln + wd) * 2;
+//
+//        println("The rectangle has " +
+//                "a length of \(ln) " +
+//                "and a width of \(wd), " +
+//                "giving it an area of \(sq)" +
+//                "and perimeter of \(pr)")
+//
+//    }
+
+    @objc func tick(timer:NSTimer!) {
         mySecond++
         if mySecond >= 60 {
             mySecond = 0
@@ -51,21 +64,27 @@ class Timer {
             myHour++
         }
 
-    if myHour >= 24 {
-        myHour = 0
-        myDay++
+        if myHour >= 24 {
+            myHour = 0
+            myDay++
+        }
+
+        let swArray = ["first", "second"]
+        let nsArray : NSArray = ["dog", "cat"]
+
+
+
+        var curL = CFLocaleCopyCurrent()
+
+        let curTime = getLastTime()
+        let curSec = curTime.sec
+
+        //getSq(3, 7)
+
+        let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", curTime.day, curTime.hour, curTime.min, curTime.sec)
+        self.handler(timeStr as String)
+
     }
-
-    let curTime = getLastTime()
-    let curSec = curTime.sec
-
-    let timeStr = NSString(format: "%.2d:%.2d:%.2d:%.2d", curTime.day, curTime.hour, curTime.min, curTime.sec)
-    self.handler(timeStr as String)
-
-
-
-
-}
     
     func getLastTime() -> timeData! {
         return (mySecond, myMinute, myHour, myDay)
